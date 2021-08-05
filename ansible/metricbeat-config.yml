@@ -1,44 +1,42 @@
-######################## Filebeat Configuration ############################
-# This file is a full configuration example documenting all non-deprecated
-# options in comments. For a shorter configuration example, that contains only
-# the most common options, please see filebeat.yml in the same directory.
+###################### Metricbeat Configuration Example #######################
+
+# This file is an example configuration file highlighting only the most common
+# options. The metricbeat.reference.yml file from the same directory contains all the
+# supported options with more comments. You can use it as a reference.
 #
 # You can find the full configuration reference here:
-# https://www.elastic.co/guide/en/beats/filebeat/index.html
-filebeat.config.modules:
+# https://www.elastic.co/guide/en/beats/metricbeat/index.html
+
+#==========================  Modules configuration ============================
+
+metricbeat.config.modules:
+  # Glob pattern for configuration loading
   path: ${path.config}/modules.d/*.yml
 
-#==========================  Modules configuration =============================
-filebeat.modules:
+  # Set to true to enable config reloading
+  reload.enabled: false
 
-#-------------------------------- System Module --------------------------------
-#- module: system
-  # Syslog
-  #syslog:
-    #enabled: true
+  # Period on which files under path should be checked for changes
+  #reload.period: 10s
 
-    # Set custom paths for the log files. If left empty,
-    # Filebeat will choose the paths depending on your OS.
-    #var.paths:
+#==================== Elasticsearch template setting ==========================
 
-    # Input configuration (advanced). Any input configuration option
-    # can be added under this section.
-    #input:
+setup.template.settings:
+  index.number_of_shards: 1
+  index.codec: best_compression
+  #_source.enabled: false
 
-  # Authorization logs
-  #auth:
-    #enabled: true
+#================================ General =====================================
 
-    # Set custom paths for the log files. If left empty,
-    # Filebeat will choose the paths depending on your OS.
-    #var.paths:
+# The name of the shipper that publishes the network data. It can be used to group
+# all the transactions sent by a single shipper in the web interface.
+#name:
 
-    # Input configuration (advanced). Any input configuration option
-    # can be added under this section.
-    #input:
+# The tags of the shipper are included in their own field with each
+# transaction published.
+#tags: ["service-X", "web-tier"]
 
-#-------------------------------- Apache Module --------------------------------
-#- module: apache
-  # Access logs
-  #access:
-    #enabled: true
+# Optional fields that you can specify to add additional information to the
+# output.
+#fields:
+#  env: staging
