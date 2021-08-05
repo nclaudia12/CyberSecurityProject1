@@ -69,11 +69,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 What is the main advantage of automating configuration with Ansible? Allows for installations, configuring and updates to servers to be streamlined and allows for automation on repeated daily tasks. 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-Installs docker.io,pip3, docker python module
-Increase Memory/Use More Memory we use to run the ELK server
-Uses sysctl module
-Download and Launch ELK Container
+In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
+-Installs docker.io,pip3, docker python module
+-Increase Memory/Use More Memory we use to run the ELK server
+-Uses sysctl module
+-Download and Launch ELK Container
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -103,6 +103,7 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to http://[your_elk_server_ip]:5601/app/kibana to check that the installation worked as expected.
 
 -Which file is the playbook? /etc/ansible/filebeat-config.yml
+
 -Where do you copy it? /etc/filebeat/filebeat.yml
 
 - Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
