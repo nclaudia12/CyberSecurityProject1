@@ -27,31 +27,14 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-Name
-Function
-IP Address
-Operating System
-Jumpbox
-Web Server
-10.0.0.4
-Ubuntu
-Web1 
-Web Server
-10.0.0.5
-Ubuntu
-Web2
-Web Server
-10.0.0.6
-Ubuntu
-Web3
-Web Server
-10.0.0.7
-Ubuntu
-Project1
-Elk Stack
-10.1.0.4
-Ubuntu
 
+| Name     | Function   | IP Address | Operating |
+|----------|------------|------------|-----------|
+| Jumpbox  | Web Server | 10.0.0.4   | Ubuntu    |
+| Web1     | Web Server | 10.0.0.5   | Ubuntu    |
+| Web2     | Web Server | 10.0.0.6   | Ubuntu    |
+| Web3     | Web Server | 10.0.0.7   | Ubuntu    |
+| Project1 | Elk Stack  | 10.1.0.4   | Ubuntu    |
 
 
 
@@ -70,25 +53,13 @@ Private IP: 10.0.0.4
 A summary of the access policies in place can be found in the table below.
 
 
-Name
-Publicly Accessible
-Allowed IP Addresses
-Jump Box
-Yes
-10.0.0.4 
-Web1
-No
-10.0.0.5
-Web2
-No
-10.0.0.6
-Web3
-No
-10.0.0.7
-Project1(ELK)
-Yes
-10.1.0.4
-
+| Name          | Publicly Accessible | Allowed IP Addresses |
+|---------------|---------------------|----------------------|
+| Jump Box      | Yes                 | 10.0.0.4             |
+| Web1          | No                  | 10.0.0.5             |
+| Web2          | No                  | 10.0.0.6             |
+| Web3          | No                  | 10.0.0.7             |
+| Project1(Elk) | Yes                 | 10.1.0.4             |
 
 
 
